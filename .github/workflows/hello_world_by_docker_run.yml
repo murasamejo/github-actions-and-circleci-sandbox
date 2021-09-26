@@ -24,5 +24,6 @@ jobs:
       #     docker run ubuntu:20.10 /bin/echo 'Hello, World!'
       - name: echo コマンドを実行する
         run: |
-          echo ${{ github.event.inputs.logLevel }}
-          echo ${{ github.event.inputs.tags }}
+          # echo ${{ github.event.inputs.logLevel }}
+          # echo ${{ github.event.inputs.tags }}
+          echo 'gh workflow コマンドはpushしたものに対して手元から実行するものであり、実行基盤はリモートである（＝無料時間が消費される）'
