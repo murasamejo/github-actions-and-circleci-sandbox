@@ -1,0 +1,27 @@
+on:
+  workflow_dispatch:
+    inputs:
+      idNumber:
+        description: 'ID番号'
+        required: true
+        default: '123'
+      postcode:
+        description: '郵便番号（ハイフン無し）'
+        required: true
+        default: '1500001'
+
+name: Yes Or No? yesno.wtf
+jobs:
+  yesorno_api_response:
+    name: Yes Or No? API response
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+      - name: 必要なパッケージのインストール
+        run: |
+          sudo apt -y update
+          sudo apt -y install jq
+      - name: Yes Or No? yesno.wtf の API の戻り値を得る
+        run: |
+          curl 'https://yesno.wtf/api' | jq

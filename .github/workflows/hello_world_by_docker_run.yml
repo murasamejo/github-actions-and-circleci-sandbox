@@ -11,7 +11,7 @@ on:
         required: true
         default: 'Default tag'
 
-name: GitHub Actions サンドボックス
+name: GitHub Actions SSHデバッグ
 jobs:
   hello_world_by_docker_run:
     name: Hello, World! by docker run command
