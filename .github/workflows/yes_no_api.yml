@@ -12,7 +12,7 @@ on:
 
 name: Yes Or No? yesno.wtf
 jobs:
-  yesorno_api_response:
+  yes_or_no_api_response:
     name: Yes Or No? API response
     runs-on: ubuntu-latest
     steps:
@@ -25,3 +25,6 @@ jobs:
       - name: Yes Or No? yesno.wtf の API の戻り値を得る
         run: |
           curl 'https://yesno.wtf/api' | jq
+          curl 'https://yesno.wtf/api?force=yes' | jq
+          curl 'https://yesno.wtf/api?force=no' | jq
+          curl 'https://yesno.wtf/api?force=maybe' | jq
