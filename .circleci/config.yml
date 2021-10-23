@@ -1,12 +1,10 @@
 version: 2.1
-
 executors:
   ubuntu:
     docker:
       - image: cimg/base:stable-20.04
-
 jobs:
-  foobar:
+  circleci_sample_job:
     executor: ubuntu
     steps:
       - checkout
@@ -14,9 +12,8 @@ jobs:
       - run:
           command: |
             docker run ubuntu:20.10 /bin/echo 'Hello, World!'
-
 workflows:
   version: 2
-  hogehoge:
+  circleci_sample_workflow:
     jobs:
-      - foobar
+      - circleci_sample_job
